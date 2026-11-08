@@ -1272,31 +1272,31 @@ body.cursor-play .cursor-label {
 
 /* ── 3D Coverflow Stage (BizChemists Perspective Arena) ── */
 .work-stage {
-  --slide: min(76vw, 360px);
+  --slide: min(74vw, 290px);
   position: relative;
   width: 100%;
   perspective: 1600px;
-  height: calc(var(--slide) * 1.25 + 7.5rem);
+  height: calc(var(--slide) * (16 / 9) + 6.5rem);
   touch-action: pan-y;
   cursor: grab;
   overflow-x: clip;
   overflow-y: visible;
   user-select: none;
   outline: none;
-  margin: 1.5rem auto var(--space-16);
+  margin: 1.5rem auto var(--space-12);
 }
 
 @media (min-width: 640px) {
   .work-stage {
-    --slide: min(44vw, 390px);
-    height: calc(var(--slide) * 1.25 + 7.5rem);
+    --slide: min(42vw, 310px);
+    height: calc(var(--slide) * (16 / 9) + 7rem);
   }
 }
 
 @media (min-width: 1024px) {
   .work-stage {
-    --slide: min(26vw, 420px);
-    height: calc(var(--slide) * 1.25 + 7.5rem);
+    --slide: min(22vw, 330px);
+    height: calc(var(--slide) * (16 / 9) + 7.5rem);
   }
 }
 
@@ -1380,7 +1380,7 @@ body.cursor-play .cursor-label {
 }
 
 .work-frame-img {
-  aspect-ratio: 0.8 / 1;
+  aspect-ratio: 9 / 16;
   width: 100%;
   object-fit: cover;
   display: block;
@@ -1391,6 +1391,59 @@ body.cursor-play .cursor-label {
 
 .work-slide.is-centre:hover .work-frame-img {
   transform: scale(1.03);
+}
+
+/* Tap for Sound Floating Badge on 9:16 Video Cards */
+.work-sound-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: rgba(8, 14, 22, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.work-slide.is-centre .work-sound-badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work-slide.is-unmuted .work-sound-badge {
+  background: rgba(0, 242, 254, 0.22);
+  border-color: rgba(0, 242, 254, 0.7);
+  color: #00f2fe;
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.4);
+}
+
+.work-sound-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-slide.is-unmuted .work-sound-icon--muted {
+  display: none !important;
+}
+
+.work-slide.is-unmuted .work-sound-icon--unmuted {
+  display: inline-flex !important;
 }
 
 /* Slide Meta Information */

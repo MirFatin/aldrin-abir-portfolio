@@ -1269,13 +1269,18 @@ document.addEventListener('DOMContentLoaded', () => {
           slide.classList.add('is-centre');
           slide.setAttribute('aria-current', 'true');
           if (vid && !isDirect && vid.paused) {
-            vid.muted = true;
             vid.play().catch(() => {});
           }
         } else {
           slide.classList.remove('is-centre');
+          slide.classList.remove('is-unmuted');
           slide.removeAttribute('aria-current');
-          if (vid && !vid.paused) vid.pause();
+          if (vid) {
+            vid.muted = true;
+            if (!vid.paused) vid.pause();
+          }
+          const badgeText = slide.querySelector('.work-sound-label');
+          if (badgeText) badgeText.textContent = 'TAP FOR SOUND';
         }
       });
 
@@ -1304,7 +1309,27 @@ document.addEventListener('DOMContentLoaded', () => {
           step(c > 0 ? 1 : -1);
         } else {
           e.preventDefault();
-          openProjectDrawer(idx);
+          const studyLink = e.target.closest('.work-details-link');
+          if (studyLink) {
+            openProjectDrawer(idx);
+            return;
+          }
+
+          // Tap for Sound on center video
+          const vid = slide.querySelector('video');
+          if (vid) {
+            if (typeof audioFx !== 'undefined') audioFx.playClick();
+            vid.muted = !vid.muted;
+            const badgeText = slide.querySelector('.work-sound-label');
+            if (!vid.muted) {
+              slide.classList.add('is-unmuted');
+              if (badgeText) badgeText.textContent = 'SOUND ON';
+              if (vid.paused) vid.play().catch(() => {});
+            } else {
+              slide.classList.remove('is-unmuted');
+              if (badgeText) badgeText.textContent = 'TAP FOR SOUND';
+            }
+          }
         }
       });
     });

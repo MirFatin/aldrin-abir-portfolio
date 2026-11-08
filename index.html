@@ -71,7 +71,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="style.css?v=17946" />
+  <link rel="stylesheet" href="style.css?v=17947" />
 </head>
 <body>
 
@@ -358,7 +358,7 @@
           </button>
           <div class="coverflow-drag-pill">
             <span class="drag-pulse-indicator" aria-hidden="true"></span>
-            <span class="coverflow-drag-hint">DRAG TO EXPLORE · CLICK CENTER TO WATCH WITH SOUND</span>
+            <span class="coverflow-drag-hint">DRAG TO EXPLORE · TAP VIDEO FOR SOUND</span>
           </div>
           <button type="button" class="coverflow-nav-btn next" id="coverflowNextBtn" aria-label="Next project" data-cursor="CLICK">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -390,10 +390,23 @@
           data-project-idx="0"
           data-category="reels"
           aria-label="Creator Studio Reel — High-Retention Talking Head Edit"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_1_creator.mp4" poster="assets/proj_1_creator_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_1_creator.mp4" poster="assets/proj_1_creator_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Creator Studio Reel</h3>
@@ -408,10 +421,23 @@
           data-project-idx="1"
           data-category="commercial"
           aria-label="Specialty Iced Latte — Commercial Beverage Shoot"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_2_coffee.mp4" poster="assets/proj_2_coffee_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_2_coffee.mp4" poster="assets/proj_2_coffee_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Artisan Iced Latte</h3>
@@ -426,10 +452,23 @@
           data-project-idx="2"
           data-category="reels"
           aria-label="Raw Footage vs After Edit — Before & After Transformation"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_3_raw_edit.mp4" poster="assets/proj_3_raw_edit_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_3_raw_edit.mp4" poster="assets/proj_3_raw_edit_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Raw vs. After Edit</h3>
@@ -444,10 +483,23 @@
           data-project-idx="3"
           data-category="commercial brand"
           aria-label="KMF Global Education — International Study Reel"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_4_kmf.mp4" poster="assets/proj_4_kmf_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_4_kmf.mp4" poster="assets/proj_4_kmf_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">KMF Global Education</h3>
@@ -462,10 +514,23 @@
           data-project-idx="4"
           data-category="commercial"
           aria-label="Bespoke Menswear — Editorial Fashion Commercial"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_5_suit.mp4" poster="assets/proj_5_suit_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_5_suit.mp4" poster="assets/proj_5_suit_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Sartorial Menswear</h3>
@@ -480,10 +545,23 @@
           data-project-idx="5"
           data-category="brand"
           aria-label="Next-Gen AI Interface — UI Motion Graphics"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_6_ai_ui.mp4" poster="assets/proj_6_ai_ui_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_6_ai_ui.mp4" poster="assets/proj_6_ai_ui_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">AI Search Interface</h3>
@@ -498,10 +576,23 @@
           data-project-idx="6"
           data-category="reels brand"
           aria-label="Spend On — 3D Motion & Kinetic Typography"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_7_spend_on.mp4" poster="assets/proj_7_spend_on_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_7_spend_on.mp4" poster="assets/proj_7_spend_on_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Time &amp; Value Motion</h3>
@@ -516,10 +607,23 @@
           data-project-idx="7"
           data-category="reels"
           aria-label="Healthcare Specialist — Clinical Talking-Head Edit"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_8_doctor.mp4" poster="assets/proj_8_doctor_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_8_doctor.mp4" poster="assets/proj_8_doctor_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Clinical Aesthetics</h3>
@@ -534,10 +638,23 @@
           data-project-idx="8"
           data-category="reels"
           aria-label="Creator Storytelling — Paced Narrative Reel"
-          data-cursor="PLAY"
+          data-cursor="SOUND"
         >
           <div class="work-frame">
-            <video src="assets/proj_9_is_the_day.mp4" poster="assets/proj_9_is_the_day_poster.jpg" class="work-frame-img work-frame-video" width="540" height="960" muted loop playsinline preload="metadata"></video>
+            <video src="assets/proj_9_is_the_day.mp4" poster="assets/proj_9_is_the_day_poster.jpg" class="work-frame-img work-frame-video" width="720" height="1280" muted loop playsinline webkit-playsinline preload="metadata"></video>
+            <div class="work-sound-badge" aria-hidden="true">
+              <span class="work-sound-icon work-sound-icon--muted">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+              </span>
+              <span class="work-sound-icon work-sound-icon--unmuted" style="display: none;">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                </svg>
+              </span>
+              <span class="work-sound-label">TAP FOR SOUND</span>
+            </div>
           </div>
           <div class="work-meta-block">
             <h3 class="work-client-name">Creator Narrative</h3>

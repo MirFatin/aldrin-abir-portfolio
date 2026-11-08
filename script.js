@@ -910,28 +910,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── 14. Interactive Services Focus Wheel (Zero Layout Thrashing) ── */
+  /* ── 14. Interactive Services Focus Wheel (Universal Across All Devices) ── */
   const focusWheel = document.querySelector('[data-focus-wheel]');
   const focusItems = document.querySelectorAll('[data-focus-item]');
 
   if (focusWheel && focusItems.length > 0) {
     let isHoveringList = false;
 
+    // Optical focus observer: activates focus animation on whichever item is near viewport center
+    // Works universally across Desktop, Laptop, Tablet, and Mobile screens
     const focusObserver = new IntersectionObserver((entries) => {
-      if (isHoveringList || window.innerWidth <= 768) return;
+      if (isHoveringList) return;
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           focusItems.forEach(item => item.classList.toggle('is-focused', item === entry.target));
         }
       });
     }, {
-      rootMargin: '-35% 0px -35% 0px',
-      threshold: 0.1
+      rootMargin: '-25% 0px -25% 0px',
+      threshold: 0.15
     });
 
     focusItems.forEach(item => focusObserver.observe(item));
 
-    // Hover overrides scroll center
+    // Ensure initial focused item is active immediately
+    if (!document.querySelector('.service-focus-item.is-focused')) {
+      focusItems[0].classList.add('is-focused');
+    }
+
+    // Pointer hover overrides scroll center on pointer devices
     focusWheel.addEventListener('mouseenter', () => {
       isHoveringList = true;
     });
@@ -940,11 +947,16 @@ document.addEventListener('DOMContentLoaded', () => {
       isHoveringList = false;
     });
 
+    // Touch, mouseenter, and focusin listeners for instant responsive focus on all devices
     focusItems.forEach((item) => {
-      item.addEventListener('mouseenter', () => {
+      const activateFocus = () => {
         focusItems.forEach(other => other.classList.remove('is-focused'));
         item.classList.add('is-focused');
-      });
+      };
+
+      item.addEventListener('mouseenter', activateFocus);
+      item.addEventListener('touchstart', activateFocus, { passive: true });
+      item.addEventListener('focusin', activateFocus);
     });
   }
 

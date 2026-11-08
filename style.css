@@ -2604,36 +2604,42 @@ body.cursor-play .cursor-label {
               box-shadow 0.3s ease;
 }
 
-/* ── Focus Wheel Depth Focus (BizChemists signature optical lens rack) ─ */
-@media (hover: hover) and (pointer: fine) {
-  .services-focus-list .service-card {
-    opacity: 0.35;
-    filter: blur(2.5px);
-    transform: scale(0.985);
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-                border-color 0.45s ease,
-                background-color 0.45s ease,
-                box-shadow 0.45s ease;
-  }
+/* ── Universal Focus Wheel Depth Focus (All Devices: Mobile, Tablet & Desktop) ── */
+.services-focus-list .service-card {
+  opacity: 0.38;
+  filter: blur(2.5px);
+  transform: scale(0.985);
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s ease,
+              background-color 0.4s ease,
+              box-shadow 0.4s ease;
+}
 
+.services-focus-list .service-card:hover,
+.service-focus-item.is-focused .service-card {
+  opacity: 1 !important;
+  filter: blur(0px) !important;
+  transform: scale(1) translateX(8px) !important;
+  border-color: rgba(0, 242, 254, 0.65) !important;
+  background: rgba(14, 23, 35, 0.95) !important;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.85), 0 0 32px rgba(0, 242, 254, 0.2) !important;
+}
+
+@media (max-width: 768px) {
   .services-focus-list .service-card:hover,
   .service-focus-item.is-focused .service-card {
-    opacity: 1 !important;
-    filter: blur(0px) !important;
-    transform: scale(1) translateX(8px) !important;
-    border-color: rgba(0, 242, 254, 0.65);
-    background: rgba(14, 23, 35, 0.95);
-    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.85), 0 0 32px rgba(0, 242, 254, 0.2);
+    transform: scale(1.015) !important;
   }
 }
 
-/* Mobile & Reduced Motion Fallbacks */
-@media (max-width: 768px), (prefers-reduced-motion: reduce) {
-  .service-card {
+@media (prefers-reduced-motion: reduce) {
+  .services-focus-list .service-card {
     opacity: 1 !important;
+    filter: none !important;
     transform: none !important;
+    transition: none !important;
   }
 }
 

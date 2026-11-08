@@ -465,17 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Click anywhere on hero video wrapper to toggle play/pause
-    const heroVideoWrapper = document.querySelector('.hero-video-wrapper');
-    if (heroVideoWrapper) {
-      heroVideoWrapper.addEventListener('click', () => {
-        if (heroVideo.paused) {
-          heroVideo.play();
-        } else {
-          heroVideo.pause();
-        }
-      });
-    }
 
     // Audio Mute/Unmute Toggle
     if (heroSoundToggle) {

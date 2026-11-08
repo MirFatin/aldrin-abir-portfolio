@@ -1576,6 +1576,7 @@ body.cursor-play .cursor-label {
   flex-wrap: wrap;
   gap: var(--space-4);
   margin-bottom: var(--space-10);
+  perspective: 800px;
 }
 
 .app-icon-badge {
@@ -1589,11 +1590,83 @@ body.cursor-play .cursor-label {
   font-size: 1.15rem;
   font-weight: 800;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s var(--ease-bounce);
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  
+  /* Initial / out-of-view state: scaled down, faded out, slight downward offset */
+  opacity: 0;
+  transform: translateY(26px) scale(0.62);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+  will-change: transform, opacity;
 }
 
-.app-icon-badge:hover {
-  transform: translateY(-6px) scale(1.08);
+/* ── ANIMATE IN: Staggered spring entrance when entering viewport ── */
+.tools-icons-row.is-in-view .app-icon-badge {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(1) { transition-delay: 0.05s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(2) { transition-delay: 0.12s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(3) { transition-delay: 0.19s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(4) { transition-delay: 0.26s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(5) { transition-delay: 0.33s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(6) { transition-delay: 0.40s; }
+.tools-icons-row.is-in-view .app-icon-badge:nth-child(7) { transition-delay: 0.47s; }
+
+/* ── ANIMATE OUT: Staggered exit when leaving viewport ── */
+.tools-icons-row.is-out-view .app-icon-badge {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.65);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(1) { transition-delay: 0.00s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(2) { transition-delay: 0.04s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(3) { transition-delay: 0.08s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(4) { transition-delay: 0.12s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(5) { transition-delay: 0.16s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(6) { transition-delay: 0.20s; }
+.tools-icons-row.is-out-view .app-icon-badge:nth-child(7) { transition-delay: 0.24s; }
+
+/* ── CONTINUOUS IN-AND-OUT AMBIENT WAVE (Pulsing / Breathing) ── */
+@keyframes toolIconBreathe {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.08);
+  }
+}
+
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge {
+  animation: toolIconBreathe 3.4s ease-in-out infinite;
+}
+
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(1) { animation-delay: 0.0s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(2) { animation-delay: 0.45s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(3) { animation-delay: 0.90s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(4) { animation-delay: 1.35s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(5) { animation-delay: 1.80s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(6) { animation-delay: 2.25s; }
+.tools-icons-row.is-in-view.is-ambient-active .app-icon-badge:nth-child(7) { animation-delay: 2.70s; }
+
+/* ── HIGH-IMPACT HOVER & FOCUS ── */
+.app-icon-badge:hover,
+.app-icon-badge:focus-visible {
+  animation-play-state: paused !important;
+  transform: translateY(-10px) scale(1.18) !important;
+  z-index: 10;
+}
+
+.app-icon-badge:active {
+  transform: translateY(-4px) scale(0.96) !important;
+  transition-duration: 0.1s;
 }
 
 .app-icon--pr {
@@ -1601,11 +1674,19 @@ body.cursor-play .cursor-label {
   color: #9999ff;
   border: 1px solid #14148c;
 }
+.app-icon--pr:hover {
+  box-shadow: 0 12px 28px -4px rgba(153, 153, 255, 0.5), 0 0 16px rgba(153, 153, 255, 0.4);
+  border-color: #9999ff;
+}
 
 .app-icon--ae {
   background: #00005b;
   color: #d291ff;
   border: 1px solid #1c1c8c;
+}
+.app-icon--ae:hover {
+  box-shadow: 0 12px 28px -4px rgba(210, 145, 255, 0.5), 0 0 16px rgba(210, 145, 255, 0.4);
+  border-color: #d291ff;
 }
 
 .app-icon--davinci {
@@ -1616,6 +1697,10 @@ body.cursor-play .cursor-label {
   width: 36px;
   height: 36px;
 }
+.app-icon--davinci:hover {
+  box-shadow: 0 12px 28px -4px rgba(255, 77, 77, 0.45), 0 0 18px rgba(51, 204, 255, 0.4);
+  border-color: #ffcc00;
+}
 
 .app-icon--capcut {
   background: #ffffff;
@@ -1625,17 +1710,29 @@ body.cursor-play .cursor-label {
   width: 34px;
   height: 34px;
 }
+.app-icon--capcut:hover {
+  box-shadow: 0 12px 28px -4px rgba(255, 255, 255, 0.5), 0 0 16px rgba(255, 255, 255, 0.4);
+  border-color: #ffffff;
+}
 
 .app-icon--ai {
   background: #330000;
   color: #ff9a00;
   border: 1px solid #661100;
 }
+.app-icon--ai:hover {
+  box-shadow: 0 12px 28px -4px rgba(255, 154, 0, 0.5), 0 0 16px rgba(255, 154, 0, 0.4);
+  border-color: #ff9a00;
+}
 
 .app-icon--ps {
   background: #001e36;
   color: #31a8ff;
   border: 1px solid #003866;
+}
+.app-icon--ps:hover {
+  box-shadow: 0 12px 28px -4px rgba(49, 168, 255, 0.5), 0 0 16px rgba(49, 168, 255, 0.4);
+  border-color: #31a8ff;
 }
 
 .app-icon--canva {
@@ -1645,6 +1742,10 @@ body.cursor-play .cursor-label {
 .canva-script-text {
   font-family: cursive;
   font-size: 0.95rem;
+}
+.app-icon--canva:hover {
+  box-shadow: 0 12px 28px -4px rgba(0, 196, 204, 0.6), 0 0 18px rgba(125, 42, 232, 0.5);
+  border-color: #00c4cc;
 }
 
 .statement-card {

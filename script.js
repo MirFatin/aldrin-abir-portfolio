@@ -669,6 +669,57 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach((el) => revealObserver.observe(el));
 
 
+  /* ── 5b. Tools Icons Animate In & Out Scroll Observer ───────── */
+  const toolsSection = document.getElementById('tools');
+  const toolsIconsRow = document.querySelector('.tools-icons-row');
+  if (toolsSection && toolsIconsRow) {
+    let ambientTimer = null;
+    const toolsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Animate IN: trigger staggered spring entrance
+          toolsIconsRow.classList.remove('is-out-view');
+          toolsIconsRow.classList.add('is-in-view');
+          clearTimeout(ambientTimer);
+          ambientTimer = setTimeout(() => {
+            if (toolsIconsRow.classList.contains('is-in-view')) {
+              toolsIconsRow.classList.add('is-ambient-active');
+            }
+          }, 850);
+        } else {
+          // Animate OUT: trigger exit animation
+          clearTimeout(ambientTimer);
+          toolsIconsRow.classList.remove('is-ambient-active');
+          toolsIconsRow.classList.remove('is-in-view');
+          toolsIconsRow.classList.add('is-out-view');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -30px 0px'
+    });
+    toolsObserver.observe(toolsSection);
+
+    // Audio click feedback & accessible keyboard support on tool badges
+    toolsIconsRow.querySelectorAll('.app-icon-badge').forEach((badge) => {
+      badge.setAttribute('tabindex', '0');
+      badge.setAttribute('role', 'button');
+      badge.setAttribute('data-cursor', 'CLICK');
+      badge.addEventListener('click', () => {
+        if (typeof audioFx !== 'undefined') {
+          audioFx.playClick();
+        }
+      });
+      badge.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          badge.click();
+        }
+      });
+    });
+  }
+
+
   /* ── 6. Eased Stat Counters Animation ──────────────────────── */
   const statDigits = document.querySelectorAll('.stat-digit');
 

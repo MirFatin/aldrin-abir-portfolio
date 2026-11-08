@@ -3087,26 +3087,18 @@ body.cursor-play .cursor-label {
 }
 
 .bento-card-plans {
-  grid-column: span 5;
-}
-
-.bento-card-feedback {
-  grid-column: span 7;
+  grid-column: span 6;
 }
 
 .bento-card-support {
-  grid-column: span 4;
-}
-
-.bento-card-ecosystem {
-  grid-column: span 8;
+  grid-column: span 6;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 1024px) {
   .bento-card-plans,
-  .bento-card-feedback,
-  .bento-card-support,
-  .bento-card-ecosystem {
+  .bento-card-support {
     grid-column: span 12;
   }
 }
@@ -3279,148 +3271,15 @@ body.cursor-play .cursor-label {
   float: right;
 }
 
-/* ── Card 2: Interactive Slack / Collaboration Widget ────── */
-.bento-chat-widget {
-  background: rgba(8, 12, 18, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-}
-
-.chat-widget-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.chat-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.chat-star {
-  color: var(--cyan-bright);
-  font-size: 12px;
-}
-
-.chat-title-text {
-  font-family: var(--font-main);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.chat-avatar-stack {
-  display: flex;
-  align-items: center;
-}
-
-.chat-avatar-circle {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #2b3a4a;
-  color: #ffffff;
-  font-size: 9px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: -6px;
-  border: 2px solid #080c12;
-}
-
-.chat-avatar-circle.aldrin {
-  background: var(--cyan-dim);
-}
-
-.chat-avatar-badge {
-  font-family: var(--font-main);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.6);
-  margin-left: 8px;
-}
-
-.chat-messages-container {
-  padding: 14px;
+/* ── Card 3: Support Glowing Box ─────────────────────────── */
+.bento-card-support .support-glow-box {
+  margin-top: auto;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.chat-msg-row {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-.chat-user-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: #334455;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  shrink: 0;
 }
 
-.chat-user-avatar.aldrin {
-  background: var(--cyan-dim);
-}
-
-.chat-bubble-wrap {
-  flex: 1;
-}
-
-.chat-meta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 2px;
-}
-
-.chat-sender {
-  font-family: var(--font-main);
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.chat-time {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.chat-text {
-  font-family: var(--font-body);
-  font-size: 12px;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.chat-reaction {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-top: 4px;
-  padding: 2px 6px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 11px;
-}
-
-/* ── Card 3: Support Glowing Box ─────────────────────────── */
 .support-glow-box {
   background: rgba(8, 14, 22, 0.9);
   border: 1px solid rgba(0, 242, 254, 0.25);
@@ -3474,167 +3333,6 @@ body.cursor-play .cursor-label {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.6);
 }
-
-/* ── Card 4: Ecosystem & Radar Constellation ─────────────── */
-.ecosystem-split-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-  margin-top: var(--space-4);
-}
-
-@media (max-width: 768px) {
-  .ecosystem-split-wrap {
-    grid-template-columns: 1fr;
-  }
-}
-
-.eco-panel-title {
-  font-family: var(--font-main);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: var(--space-3);
-}
-
-.eco-skill-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.eco-skill-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 10px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.eco-avatar {
-  font-size: 16px;
-}
-
-.eco-skill-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.eco-name {
-  font-family: var(--font-main);
-  font-size: 11px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.eco-role {
-  font-family: var(--font-body);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.eco-badge {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 700;
-  color: var(--cyan-bright);
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(0, 196, 204, 0.1);
-}
-
-/* ── Radar Constellation Physics ─────────────────────────── */
-.radar-constellation-stage {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  border-radius: 16px;
-  background: radial-gradient(circle at center, rgba(0, 196, 204, 0.06) 0%, rgba(5, 8, 14, 0.95) 75%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.radar-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(0, 196, 204, 0.25);
-  pointer-events: none;
-}
-
-.radar-ring-1 { width: 70px; height: 70px; }
-.radar-ring-2 { width: 130px; height: 130px; }
-.radar-ring-3 { width: 190px; height: 190px; }
-
-.radar-sweep-beam {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: conic-gradient(from 0deg, rgba(0, 242, 254, 0.3) 0deg, transparent 60deg);
-  border-radius: 50%;
-  transform-origin: center;
-  animation: radar-sweep 5s infinite linear;
-  pointer-events: none;
-}
-
-@keyframes radar-sweep {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.radar-core-hub {
-  z-index: 2;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--cyan);
-  color: #000000;
-  font-family: var(--font-main);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px var(--cyan);
-}
-
-.radar-node {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 7px;
-  border-radius: 12px;
-  background: rgba(12, 18, 28, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  font-family: var(--font-main);
-  font-size: 10px;
-  font-weight: 600;
-  color: #ffffff;
-  transition: transform 0.25s, border-color 0.25s;
-}
-
-.radar-node:hover {
-  transform: scale(1.1);
-  border-color: var(--cyan-bright);
-}
-
-.node-icon { font-size: 10px; }
-.node-yt { top: 18px; left: 24px; }
-.node-reels { top: 22px; right: 28px; }
-.node-tiktok { bottom: 22px; left: 30px; }
-.node-ads { bottom: 26px; right: 35px; }
-.node-fashion { top: 88px; right: 12px; }
 
 /* ═══════════════════════════════════════════════════════════
    SERVICE DETAIL SLIDE-OVER DRAWER MODAL

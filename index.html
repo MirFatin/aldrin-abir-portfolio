@@ -71,7 +71,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="style.css?v=17948" />
+  <link rel="stylesheet" href="style.css?v=17949" />
 </head>
 <body>
 
@@ -208,66 +208,26 @@
           I’m a <em>Creative Designer</em> focused on turning ideas into polished visual content. From product and talking-head shoots to video editing, social media creatives and print design, I handle the creative process from production to final delivery.
         </p>
 
-        <!-- Signature Creative Process Showcase Card: Interactive Before & After RAW vs Graded Slider -->
-        <div class="ba-slider-card" id="aboutProcessCard" data-cursor="DRAG" tabindex="0" role="region" aria-label="Aldrin Abir creative workflow: Drag to compare RAW S-Log3 vs Final 4K Cinema Grade">
-          <!-- Layer 1: Flat RAW S-Log3 Profile (Desaturated & Flat) -->
-          <div class="ba-layer ba-layer--before">
-            <video
-              id="aboutProcessVideo"
-              class="ba-video ba-video--raw"
-              autoplay
-              loop
-              muted
-              playsinline
-              poster="assets/ba_landscape_poster.jpg"
-              width="1920"
-              height="1080"
-              preload="metadata"
-              controlslist="nodownload nofullscreen noremoteplayback"
-              disablepictureinpicture
-              oncontextmenu="return false;"
-            >
-              <source src="assets/ba_landscape.mp4" type="video/mp4" />
-            </video>
-            <div class="ba-profile-badge ba-profile-badge--raw">
-              <span class="badge-dot-log"></span>
-              <span>RAW S-LOG3 PROFILE</span>
-            </div>
-          </div>
-
-          <!-- Layer 2: Final 4K Cinema Master Grade (Dynamic Clip Path) -->
-          <div class="ba-layer ba-layer--after" id="baLayerAfter">
-            <video
-              id="aboutProcessVideoGraded"
-              class="ba-video ba-video--graded"
-              autoplay
-              loop
-              muted
-              playsinline
-              poster="assets/ba_landscape_poster.jpg"
-              width="1920"
-              height="1080"
-              preload="metadata"
-              controlslist="nodownload nofullscreen noremoteplayback"
-              disablepictureinpicture
-              oncontextmenu="return false;"
-            >
-              <source src="assets/ba_landscape.mp4" type="video/mp4" />
-            </video>
-            <div class="ba-profile-badge ba-profile-badge--graded">
-              <span class="badge-dot-grade"></span>
-              <span>FINAL 4K CINEMA GRADE</span>
-            </div>
-          </div>
-
-          <!-- Interactive Wiper Handle Divider -->
-          <div class="ba-wiper-line" id="baWiperLine" style="left: 50%;">
-            <div class="ba-wiper-handle">
-              <span class="wiper-arrow left">‹</span>
-              <span class="wiper-center-grip"></span>
-              <span class="wiper-arrow right">›</span>
-            </div>
-          </div>
+        <!-- Signature Creative Process Showcase Card: Clean Cinematic Video Showcase -->
+        <div class="about-process-card" id="aboutProcessCard" tabindex="0" role="region" aria-label="Aldrin Abir creative production reel">
+          <video
+            id="aboutProcessVideo"
+            class="about-process-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            webkit-playsinline
+            poster="assets/ba_landscape_poster.jpg"
+            width="1920"
+            height="1080"
+            preload="metadata"
+            controlslist="nodownload nofullscreen noremoteplayback"
+            disablepictureinpicture
+            oncontextmenu="return false;"
+          >
+            <source src="assets/ba_landscape.mp4" type="video/mp4" />
+          </video>
 
           <!-- Interactive Video Controls Overlay -->
           <div class="about-video-controls-overlay">
@@ -292,11 +252,6 @@
                 <line x1="17" y1="9" x2="23" y2="15"/>
               </svg>
             </button>
-          </div>
-
-          <div class="ba-drag-hint-pill">
-            <span class="hint-pulse-dot"></span>
-            <span>DRAG SLIDER TO COMPARE</span>
           </div>
 
           <div class="about-card-sheen" aria-hidden="true"></div>
@@ -3545,6 +3500,6 @@
   <!-- High-Performance Smooth Scroll Engine (Lenis) -->
   <script src="assets/lenis.min.js"></script>
   <!-- Main Portfolio Scripts -->
-  <script src="script.js?v=17948"></script>
+  <script src="script.js?v=17949"></script>
 </body>
 </html>

@@ -2160,73 +2160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── 22. Interactive Before & After RAW vs Graded Split Slider ── */
-  function initBeforeAfterSlider() {
-    const card = document.getElementById('aboutProcessCard');
-    const layerAfter = document.getElementById('baLayerAfter');
-    const wiperLine = document.getElementById('baWiperLine');
-    const videoRaw = document.getElementById('aboutProcessVideo');
-    const videoGraded = document.getElementById('aboutProcessVideoGraded');
-    if (!card || !layerAfter || !wiperLine) return;
 
-    let isWiperActive = false;
-
-    // Synchronize both video streams
-    if (videoRaw && videoGraded) {
-      videoRaw.addEventListener('play', () => {
-        videoGraded.currentTime = videoRaw.currentTime;
-        videoGraded.play().catch(() => {});
-      });
-      videoRaw.addEventListener('pause', () => videoGraded.pause());
-      videoRaw.addEventListener('seeking', () => {
-        videoGraded.currentTime = videoRaw.currentTime;
-      });
-      videoRaw.addEventListener('timeupdate', () => {
-        if (Math.abs(videoGraded.currentTime - videoRaw.currentTime) > 0.15) {
-          videoGraded.currentTime = videoRaw.currentTime;
-        }
-      });
-    }
-
-    function setWiperPosition(percent) {
-      const clamped = Math.max(4, Math.min(96, percent));
-      layerAfter.style.clipPath = `polygon(${clamped}% 0, 100% 0, 100% 100%, ${clamped}% 100%)`;
-      wiperLine.style.left = `${clamped}%`;
-    }
-
-    function handlePointer(e) {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const percent = (x / rect.width) * 100;
-      setWiperPosition(percent);
-    }
-
-    card.addEventListener('pointerdown', (e) => {
-      isWiperActive = true;
-      card.classList.add('is-active-dragging');
-      try { card.setPointerCapture(e.pointerId); } catch (_) {}
-      handlePointer(e);
-    });
-
-    card.addEventListener('pointermove', (e) => {
-      if (isWiperActive) {
-        handlePointer(e);
-      }
-    });
-
-    const stopDragging = (e) => {
-      if (isWiperActive) {
-        isWiperActive = false;
-        card.classList.remove('is-active-dragging');
-        try { card.releasePointerCapture(e.pointerId); } catch (_) {}
-      }
-    };
-
-    card.addEventListener('pointerup', stopDragging);
-    card.addEventListener('pointercancel', stopDragging);
-  }
-
-  initBeforeAfterSlider();
 
   /* ── 23. NLE Playhead Live SMPTE Timecode HUD ─────────────────── */
   function initHeroNleHud() {

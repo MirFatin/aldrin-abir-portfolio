@@ -2027,9 +2027,77 @@ body.cursor-play .cursor-label {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .campaign-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(0.6rem, 2.2vw, 1rem);
+  }
+
+  .campaign-card {
+    border-radius: clamp(12px, 2.5vw, 18px);
+  }
+
+  .campaign-card-meta {
+    padding: clamp(0.65rem, 2vw, 0.95rem);
+    gap: 0.25rem;
+  }
+
+  .meta-tag-row {
+    gap: 0.35rem;
+  }
+
+  .campaign-tag-badge,
+  .campaign-stat-badge {
+    font-size: clamp(0.52rem, 1.8vw, 0.6rem);
+    padding: 0.15rem 0.4rem;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+  }
+
+  .campaign-client-title {
+    font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+    line-height: 1.2;
+    margin-top: 0.15rem;
+  }
+
+  .campaign-client-sub {
+    font-size: clamp(0.7rem, 2.2vw, 0.78rem);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .campaign-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.55rem;
+  }
+
+  .campaign-card {
+    border-radius: 12px;
+  }
+
+  .campaign-card-meta {
+    padding: 0.6rem 0.5rem;
+    gap: 0.2rem;
+  }
+
+  .campaign-tag-badge,
+  .campaign-stat-badge {
+    font-size: 0.5rem;
+    padding: 0.12rem 0.32rem;
+  }
+
+  .campaign-client-title {
+    font-size: 0.8rem;
+  }
+
+  .campaign-client-sub {
+    font-size: 0.66rem;
+    line-height: 1.3;
   }
 }
 
@@ -4171,11 +4239,6 @@ body.cursor-play .cursor-label {
   .hero-footer-left,
   .hero-footer-right {
     font-size: 0.72rem;
-  }
-
-  .campaign-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
   }
 
   .projects-coverflow-header {

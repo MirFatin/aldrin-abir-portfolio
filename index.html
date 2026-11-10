@@ -71,7 +71,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="style.css?v=17956" />
+  <!-- High-Priority Image Preload for Instant First-Frame Rendering -->
+  <link rel="preload" as="image" href="assets/hero_poster.jpg" />
+
+  <link rel="stylesheet" href="style.css?v=17957" />
 </head>
 <body>
 
@@ -1662,6 +1665,7 @@
         </div>
 
         <div class="footer-social-pill-group">
+          <a href="https://wa.me/?text=Hi%20Aldrin,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="footer-social-pill footer-whatsapp-pill" data-cursor="LINK" aria-label="Chat with Aldrin on WhatsApp">WhatsApp</a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" data-cursor="LINK" aria-label="Aldrin Abir on Instagram">Instagram</a>
           <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="footer-social-pill" data-cursor="LINK" aria-label="Aldrin Abir on Behance">Behance</a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-pill" data-cursor="LINK" aria-label="Aldrin Abir on LinkedIn">LinkedIn</a>
@@ -1751,6 +1755,12 @@
 
       <!-- Quick Copy Bar -->
       <div class="drawer-quick-bar">
+        <a href="https://wa.me/?text=Hi%20Aldrin,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="quick-whatsapp-pill" aria-label="Direct WhatsApp Message" data-cursor="LINK">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.71 4.3 3.8.6.26 1.07.41 1.44.53.6.19 1.15.16 1.59.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.29z"/>
+          </svg>
+          <span>Chat on WhatsApp</span>
+        </a>
         <div class="quick-email-pill">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -1980,6 +1990,48 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       CAMPAIGN FULL-RESOLUTION LIGHTBOX MODAL
+  ============================================================ -->
+  <div class="campaign-lightbox-overlay" id="campaignLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Campaign Design Full-Screen Viewer">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content-wrap">
+      <button type="button" class="lightbox-close-btn" id="lightboxCloseBtn" aria-label="Close image viewer" data-cursor="LINK">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <button type="button" class="lightbox-nav-btn lightbox-prev-btn" id="lightboxPrevBtn" aria-label="Previous campaign" data-cursor="LINK">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-image-stage">
+        <img src="" alt="" class="lightbox-main-img" id="lightboxMainImg" />
+        <div class="lightbox-caption-bar">
+          <div class="lightbox-caption-meta">
+            <div class="lightbox-tag-group">
+              <span class="lightbox-tag-pill" id="lightboxTag">CATEGORY</span>
+              <span class="lightbox-stat-pill" id="lightboxStat">TAG</span>
+            </div>
+            <h3 class="lightbox-title" id="lightboxTitle">Campaign Title</h3>
+            <p class="lightbox-desc" id="lightboxDesc">Campaign description...</p>
+          </div>
+          <div class="lightbox-counter" id="lightboxCounter">01 / 12</div>
+        </div>
+      </div>
+
+      <button type="button" class="lightbox-nav-btn lightbox-next-btn" id="lightboxNextBtn" aria-label="Next campaign" data-cursor="LINK">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   <!-- Global Floating Toast Notification -->
   <div class="portfolio-toast" id="portfolioToast" role="status" aria-live="polite" aria-atomic="true">
     <div class="toast-indicator"></div>
@@ -1989,6 +2041,6 @@
   <!-- High-Performance Smooth Scroll Engine (Lenis) -->
   <script src="assets/lenis.min.js"></script>
   <!-- Main Portfolio Scripts -->
-  <script src="script.js?v=17956"></script>
+  <script src="script.js?v=17957"></script>
 </body>
 </html>

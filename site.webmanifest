@@ -2,23 +2,23 @@
   "name": "Aldrin Abir — Creative Portfolio",
   "short_name": "Aldrin Abir",
   "description": "Video Editor & Creative Content Designer Portfolio. Transforming ideas into polished commercial visuals.",
-  "start_url": "./",
+  "start_url": "/aldrin-abir-portfolio/",
   "display": "standalone",
   "background_color": "#03080c",
   "theme_color": "#03080c",
   "icons": [
     {
-      "src": "favicon-32x32.png",
+      "src": "/aldrin-abir-portfolio/favicon-32x32.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "apple-touch-icon.png",
+      "src": "/aldrin-abir-portfolio/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "favicon.svg",
+      "src": "/aldrin-abir-portfolio/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }

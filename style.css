@@ -5228,7 +5228,7 @@ body.cursor-play .cursor-label {
 }
 
 /* ═══════════════════════════════════════════════════════════
-   CLIENT BRAND LOGOS MARQUEE
+   CLIENT BRAND LOGOS MARQUEE (19 Authentic Visual Logos)
 ═══════════════════════════════════════════════════════════ */
 .client-logos-wrapper {
   margin-top: 4rem;
@@ -5273,10 +5273,10 @@ body.cursor-play .cursor-label {
 .client-logos-track {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   width: max-content;
-  animation: infiniteBrandScroll 35s linear infinite;
-  padding: 0.5rem 0;
+  animation: infiniteBrandScroll 42s linear infinite;
+  padding: 0.6rem 0;
 }
 
 .client-logos-marquee:hover .client-logos-track {
@@ -5291,34 +5291,56 @@ body.cursor-play .cursor-label {
 .brand-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1.6rem;
-  background: rgba(255, 255, 255, 0.03);
+  justify-content: center;
+  padding: 0.65rem 1.35rem;
+  background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 9999px;
-  color: rgba(255, 255, 255, 0.75);
-  transition: all 0.3s ease;
-  white-space: nowrap;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  flex-shrink: 0;
 }
 
 .brand-item:hover {
-  background: rgba(0, 201, 167, 0.08);
-  border-color: rgba(0, 242, 254, 0.35);
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.15);
+  background: rgba(0, 242, 254, 0.08);
+  border-color: rgba(0, 242, 254, 0.4);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), 0 0 24px rgba(0, 242, 254, 0.25);
 }
 
-.brand-sym {
-  color: var(--cyan-bright);
-  font-size: 0.9rem;
+.brand-logo-img {
+  height: clamp(38px, 4.5vw, 48px);
+  width: auto;
+  max-width: clamp(80px, 9vw, 110px);
+  object-fit: contain;
+  display: block;
+  filter: brightness(0.92) contrast(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  pointer-events: none;
 }
 
-.brand-txt {
-  font-family: var(--font-main);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+.brand-item:hover .brand-logo-img {
+  filter: brightness(1) drop-shadow(0 4px 12px rgba(0, 242, 254, 0.35));
+}
+
+@media (max-width: 768px) {
+  .client-logos-track {
+    gap: 1rem;
+    animation: infiniteBrandScroll 32s linear infinite;
+  }
+
+  .brand-item {
+    padding: 0.5rem 0.95rem;
+    border-radius: 12px;
+  }
+
+  .brand-logo-img {
+    height: 32px;
+    max-width: 75px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════

@@ -5273,10 +5273,10 @@ body.cursor-play .cursor-label {
 .client-logos-track {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.6rem;
   width: max-content;
   animation: infiniteBrandScroll 42s linear infinite;
-  padding: 0.6rem 0;
+  padding: 1rem 0;
 }
 
 .client-logos-marquee:hover .client-logos-track {
@@ -5292,14 +5292,14 @@ body.cursor-play .cursor-label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.1rem 2.2rem;
-  min-width: 200px;
-  height: 104px;
-  background: rgba(255, 255, 255, 0.065);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 22px;
+  padding: 1.2rem 2.4rem;
+  min-width: 220px;
+  height: 118px;
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   flex-shrink: 0;
@@ -5308,42 +5308,43 @@ body.cursor-play .cursor-label {
 .brand-item:hover {
   background: rgba(0, 242, 254, 0.12);
   border-color: rgba(0, 242, 254, 0.5);
-  transform: translateY(-5px) scale(1.06);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.65), 0 0 30px rgba(0, 242, 254, 0.35);
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 32px rgba(0, 242, 254, 0.35);
 }
 
 .brand-logo-img {
-  height: clamp(68px, 7.5vw, 88px);
+  height: clamp(80px, 8.5vw, 100px);
   width: auto;
-  max-width: clamp(160px, 18vw, 230px);
+  max-width: clamp(180px, 20vw, 260px);
   object-fit: contain;
   display: block;
-  filter: brightness(1.05) contrast(1.05);
+  filter: brightness(1.08) contrast(1.06);
   transition: filter 0.3s ease, transform 0.3s ease;
   user-select: none;
   pointer-events: none;
 }
 
 .brand-item:hover .brand-logo-img {
-  filter: brightness(1.15) drop-shadow(0 4px 16px rgba(0, 242, 254, 0.45));
+  filter: brightness(1.18) drop-shadow(0 4px 18px rgba(0, 242, 254, 0.45));
 }
 
 @media (max-width: 768px) {
   .client-logos-track {
     gap: 1.25rem;
     animation: infiniteBrandScroll 32s linear infinite;
+    padding: 0.8rem 0;
   }
 
   .brand-item {
-    padding: 0.75rem 1.4rem;
-    height: 74px;
-    min-width: 140px;
-    border-radius: 16px;
+    padding: 0.85rem 1.6rem;
+    height: 88px;
+    min-width: 160px;
+    border-radius: 18px;
   }
 
   .brand-logo-img {
-    height: 52px;
-    max-width: 125px;
+    height: 62px;
+    max-width: 145px;
   }
 }
 
